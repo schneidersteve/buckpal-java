@@ -1,0 +1,14 @@
+{
+  "name": "Debian",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oracle-labs-graalvm.micronaut",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "humao.rest-client"
+      ]
+    }
+  }
+}
