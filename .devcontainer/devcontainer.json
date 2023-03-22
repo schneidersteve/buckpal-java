@@ -4,7 +4,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "oracle-labs-graalvm.micronaut",
+        "vscjava.vscode-java-pack",
         "esbenp.prettier-vscode",
         "eamodio.gitlens",
         "humao.rest-client"
