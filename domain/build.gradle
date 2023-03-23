@@ -1,12 +1,22 @@
 plugins {
-    id("groovy")
+    id("java")
+    id "io.freefair.lombok" version "8.0.1"
 }
 
 repositories {
     mavenCentral()
 }
 
+dependencies {
+	testImplementation(platform('org.junit:junit-bom:5.9.2'))
+	testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
     targetCompatibility = JavaVersion.toVersion("17")
+}
+
+test {
+    useJUnitPlatform()
 }

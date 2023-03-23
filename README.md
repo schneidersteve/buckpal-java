@@ -43,3 +43,9 @@ Feature: Send Money
 
     And accounts have been updated
 ```
+
+# Gradle Examples
+
+> ./gradlew test
+
+> ./gradlew test -t

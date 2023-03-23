@@ -3,10 +3,5 @@
 
 # Ignore Gradle build output directory
 build
-adapters-inbound/web/build
-adapters-outbound/persistence/build
-application/build
-domain/build
-main/build
 
 .vscode
