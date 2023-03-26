@@ -2,7 +2,7 @@ package buckpal.java.application.queries;
 
 import java.time.LocalDateTime;
 
-import buckpal.java.application.inboundports.GetAccountBalanceQuery;
+import buckpal.java.application.inboundports.GetAccountBalanceUseCase;
 import buckpal.java.application.outboundports.LoadAccountPort;
 import buckpal.java.domain.ar.Account.AccountId;
 import buckpal.java.domain.vo.Money;
@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Singleton
 @RequiredArgsConstructor
-class GetAccountBalanceQueryImpl implements GetAccountBalanceQuery {
+class GetAccountBalanceUseCaseImpl implements GetAccountBalanceUseCase {
 
 	private final LoadAccountPort loadAccountPort;
 

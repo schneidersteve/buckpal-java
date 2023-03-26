@@ -1,7 +1,7 @@
 package buckpal.kotlin.inbound.adapter.web
 
-import buckpal.java.application.inboundports.GetAccountBalanceQuery
-import buckpal.java.application.queries.GetAccountBalanceQueryImpl
+import buckpal.java.application.inboundports.GetAccountBalanceUseCase
+import buckpal.java.application.queries.GetAccountBalanceUseCaseImpl
 import buckpal.java.domain.ar.Account.AccountId
 import buckpal.java.domain.vo.Money
 
@@ -25,8 +25,8 @@ import static io.micronaut.http.HttpRequest.GET
 class GetAccountBalanceControllerSpec extends Specification {
 
     @MockBean
-    @Replaces(GetAccountBalanceQueryImpl)
-    GetAccountBalanceQuery getAccountBalanceQuery = Mock()
+    @Replaces(GetAccountBalanceUseCaseImpl)
+    GetAccountBalanceUseCase getAccountBalanceUseCase = Mock()
 
     @Shared
     @AutoCleanup
@@ -44,7 +44,7 @@ class GetAccountBalanceControllerSpec extends Specification {
             response.body() == "500"
 
         and:
-            1 * getAccountBalanceQuery.getAccountBalance(new AccountId(41L)) >> Money.of(500L)
+            1 * getAccountBalanceUseCase.getAccountBalance(new AccountId(41L)) >> Money.of(500L)
 
     }
 

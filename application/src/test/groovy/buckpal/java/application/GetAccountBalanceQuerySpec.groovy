@@ -1,8 +1,8 @@
 package buckpal.java.application
 
 import buckpal.java.application.outboundports.LoadAccountPort
-import buckpal.java.application.inboundports.GetAccountBalanceQuery
-import buckpal.java.application.queries.GetAccountBalanceQueryImpl
+import buckpal.java.application.inboundports.GetAccountBalanceUseCase
+import buckpal.java.application.queries.GetAccountBalanceUseCaseImpl
 import buckpal.java.domain.ar.Account
 import buckpal.java.domain.ar.Account.AccountId
 import buckpal.java.domain.vo.Money
@@ -13,7 +13,7 @@ class GetAccountBalanceQuerySpec extends Specification {
 
     LoadAccountPort loadAccountPort = Mock()
 
-    GetAccountBalanceQuery getAccountBalanceQuery = new GetAccountBalanceQueryImpl(loadAccountPort)
+    GetAccountBalanceUseCase getAccountBalanceUseCase = new GetAccountBalanceUseCaseImpl(loadAccountPort)
 
     def "Succeeds"() {
         given: "a account"
@@ -22,7 +22,7 @@ class GetAccountBalanceQuerySpec extends Specification {
             loadAccountPort.loadAccount(accountId, _) >> account
 
         when: "balance is queried"
-            var balance = getAccountBalanceQuery.getAccountBalance(accountId)
+            var balance = getAccountBalanceUseCase.getAccountBalance(accountId)
 
         then: "balance is 500"
             balance == Money.of(500L)

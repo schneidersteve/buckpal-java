@@ -1,6 +1,6 @@
 package buckpal.java.inbound.adapter.web;
 
-import buckpal.java.application.inboundports.GetAccountBalanceQuery;
+import buckpal.java.application.inboundports.GetAccountBalanceUseCase;
 import buckpal.java.domain.ar.Account.AccountId;
 
 import io.micronaut.http.MediaType;
@@ -11,9 +11,9 @@ import io.micronaut.http.annotation.Produces;
 
 @Controller("/accounts")
 public class GetAccountBalanceController {
-    private final GetAccountBalanceQuery getAccountBalanceQuery;
+    private final GetAccountBalanceUseCase getAccountBalanceQuery;
 
-    public GetAccountBalanceController(GetAccountBalanceQuery getAccountBalanceQuery) {
+    public GetAccountBalanceController(GetAccountBalanceUseCase getAccountBalanceQuery) {
         this.getAccountBalanceQuery = getAccountBalanceQuery;
     }
 

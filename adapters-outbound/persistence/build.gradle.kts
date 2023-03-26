@@ -16,13 +16,14 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.26")
     annotationProcessor("org.projectlombok:lombok:1.18.26")
 
+    annotationProcessor("io.micronaut:micronaut-inject-java")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+
     implementation(project(":domain"))
     implementation(project(":application"))
 
-    implementation("io.micronaut:micronaut-http-server-netty")
-
-    testImplementation("org.spockframework:spock-core")
-    testImplementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut.data:micronaut-data-r2dbc")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.0.0")
 
     runtimeOnly("ch.qos.logback:logback-classic")
 }

@@ -1,3 +1,5 @@
+package buckpal.java.application
+
 import buckpal.java.application.outboundports.AccountLock
 import buckpal.java.application.outboundports.LoadAccountPort
 import buckpal.java.application.commands.MoneyTransferProperties
