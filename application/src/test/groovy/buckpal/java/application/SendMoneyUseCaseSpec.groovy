@@ -22,7 +22,7 @@ class SendMoneyUseCaseSpec extends Specification {
     UpdateAccountStatePort updateAccountStatePort = Mock()
 
     SendMoneyUseCase sendMoneyUseCase = new SendMoneyUseCaseImpl(loadAccountPort, accountLock,
-            updateAccountStatePort, new MoneyTransferProperties(Money.of(Long.MAX_VALUE)));
+            updateAccountStatePort, new MoneyTransferProperties());
 
     def "Transaction succeeds"() {
         given: "a source account"

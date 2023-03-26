@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Singleton
 @RequiredArgsConstructor
-class GetAccountBalanceUseCaseImpl implements GetAccountBalanceUseCase {
+public class GetAccountBalanceUseCaseImpl implements GetAccountBalanceUseCase {
 
 	private final LoadAccountPort loadAccountPort;
 

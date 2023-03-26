@@ -16,10 +16,6 @@ import lombok.RequiredArgsConstructor;
 public class SendMoneyController {
     private final SendMoneyUseCase sendMoneyUseCase;
 
-    // public SendMoneyController(SendMoneyUseCase sendMoneyUseCase) {
-    //     this.sendMoneyUseCase = sendMoneyUseCase;
-    // }
-
     @Post("/send/{sourceAccountId}/{targetAccountId}/{amount}")
     void sendMoney(
             @PathVariable("sourceAccountId") Long sourceAccountId,

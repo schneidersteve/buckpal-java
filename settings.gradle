@@ -2,5 +2,6 @@ rootProject.name = "buckpal-java"
 
 include "domain"
 include "application"
+include "main"
 include "adapters-inbound:rest"
 include "adapters-outbound:persistence"

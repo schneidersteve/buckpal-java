@@ -1,6 +1,5 @@
 plugins {
     id("java")
-    id "io.freefair.lombok" version "8.0.1"
 }
 
 repositories {
@@ -8,6 +7,9 @@ repositories {
 }
 
 dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.26")
+    annotationProcessor("org.projectlombok:lombok:1.18.26")
+
 	testImplementation(platform('org.junit:junit-bom:5.9.2'))
 	testImplementation('org.junit.jupiter:junit-jupiter')
 }

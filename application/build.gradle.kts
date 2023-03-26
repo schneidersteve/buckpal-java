@@ -1,6 +1,5 @@
 plugins {
     groovy
-    id("io.freefair.lombok") version "8.0.1"
     id("io.micronaut.library") version "3.7.7"
 }
 
@@ -13,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.26")
+    annotationProcessor("org.projectlombok:lombok:1.18.26")
+
     annotationProcessor("io.micronaut:micronaut-inject-java")
 
     implementation(project(":domain"))

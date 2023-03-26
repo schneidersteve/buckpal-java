@@ -19,18 +19,24 @@ interface ActivityRepository extends ReactorCrudRepository<ActivityEntity, Long>
 			Long ownerAccountId,
 			LocalDateTime since);
 
-	@Query("select sum(a.amount) from ActivityJpaEntity a " +
-			"where a.targetAccountId = :accountId " +
-			"and a.ownerAccountId = :accountId " +
-			"and a.timestamp < :until")
+    @Query(
+        """
+        SELECT SUM(amount) FROM activity_entity
+               WHERE target_account_id = :accountId
+               AND owner_account_id = :accountId
+               AND timestamp < :until
+        """
+    )
 	Mono<Long> getDepositBalanceUntil(
 			Long accountId,
 			LocalDateTime until);
 
-	@Query("select sum(a.amount) from ActivityJpaEntity a " +
-			"where a.sourceAccountId = :accountId " +
-			"and a.ownerAccountId = :accountId " +
-			"and a.timestamp < :until")
+    @Query(
+        "SELECT SUM(amount) FROM activity_entity " +
+                "WHERE source_account_id = :accountId " +
+                "AND owner_account_id = :accountId " +
+                "AND timestamp < :until"
+    )
 	Mono<Long> getWithdrawalBalanceUntil(
 			Long accountId,
 			LocalDateTime until);
