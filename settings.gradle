@@ -1,3 +1,4 @@
 rootProject.name = "buckpal-java"
 
 include "domain"
+include "application"

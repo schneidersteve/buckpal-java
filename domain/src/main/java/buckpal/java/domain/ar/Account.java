@@ -9,7 +9,6 @@ import java.util.Optional;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Value;
 
 /**
  * An account that holds a certain amount of money. An {@link Account} object
@@ -25,7 +24,6 @@ public class Account {
 	/**
 	 * The unique ID of the account.
 	 */
-	@Getter
 	private final AccountId id;
 
 	/**
@@ -124,9 +122,7 @@ public class Account {
 		return true;
 	}
 
-	@Value
-	public static class AccountId {
-		private Long value;
+	public static record AccountId(Long value) {
 	}
 
 }

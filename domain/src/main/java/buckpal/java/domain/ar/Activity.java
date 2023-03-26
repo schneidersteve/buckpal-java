@@ -68,9 +68,7 @@ public class Activity {
 		this.money = money;
 	}
 
-	@Value
-	public static class ActivityId {
-		private final Long value;
+	public static record ActivityId(Long value) {
 	}
 
 }
