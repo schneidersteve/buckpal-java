@@ -6,14 +6,18 @@ import buckpal.java.application.outboundports.LoadAccountPort;
 import buckpal.java.application.outboundports.UpdateAccountStatePort;
 import buckpal.java.domain.ar.Account;
 import buckpal.java.domain.ar.Account.AccountId;
+
+import jakarta.inject.Singleton;
+
 import lombok.RequiredArgsConstructor;
 
 import javax.transaction.Transactional;
 
 import java.time.LocalDateTime;
 
-@RequiredArgsConstructor
+@Singleton
 @Transactional
+@RequiredArgsConstructor
 public class SendMoneyUseCaseImpl implements SendMoneyUseCase {
 
 	private final LoadAccountPort loadAccountPort;

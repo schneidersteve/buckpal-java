@@ -1,11 +1,11 @@
 plugins {
     groovy
-    id("io.freefair.lombok") version "8.0.1"
     id("io.micronaut.library") version "3.7.7"
 }
 
 micronaut {
     version("3.7.7")
+    testRuntime("spock2")
 }
 
 repositories {
@@ -13,19 +13,15 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor("io.micronaut:micronaut-inject-java")
-
     implementation(project(":domain"))
+    implementation(project(":application"))
 
-    implementation("javax.transaction:javax.transaction-api:1.3")
+    implementation("io.micronaut:micronaut-http-server-netty")
 
     testImplementation("org.spockframework:spock-core")
-    testRuntimeOnly("net.bytebuddy:byte-buddy:1.12.18")
-    testRuntimeOnly("org.objenesis:objenesis:3.3")
-}
+    testImplementation("io.micronaut:micronaut-http-client")
 
-tasks.test {
-    useJUnitPlatform()
+    runtimeOnly("ch.qos.logback:logback-classic")
 }
 
 java {
